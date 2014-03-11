@@ -3,6 +3,7 @@ package votaciones.controllers.beans;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 
@@ -42,8 +43,12 @@ public class VotarBeanJSF {
 		FacesContext context = FacesContext.getCurrentInstance();
 		VotarEjb vEjb = new VotarEjb();
 		String result = "votar";
+		String ip = ((HttpServletRequest) context.getExternalContext()
+				.getRequest()).getRemoteAddr();
+		voto.setIpCliente(ip);
 		if (!vEjb.votar(voto)) {
-			context.addMessage("form", new FacesMessage("Error en el proceso de votación"));
+			context.addMessage("form", new FacesMessage(
+					"Error en el proceso de votación"));
 		} else {
 			Logger.getLogger(VotarBeanJSF.class).info(
 					"voto realizado correctamente: " + voto.toString());
