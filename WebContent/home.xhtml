@@ -4,19 +4,18 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<title>Solitario JSF</title>
+	<title>Votaciones</title>
 	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
 	<meta http-equiv="Expires" content="-1" />
 </h:head>
 <h:body>
-	<h1>Solitario JSF</h1>
-	<p><h:outputText rendered="#{loginBean.logged}" value="Bienvenido: #{loginBean.user.firstName}" /></p>
-	<p><h:link outcome="./login.xhtml" value="login" /></p>
-	<p><h:link outcome="./register.xhtml" value="register" /></p>
-	
-    <p><h:link outcome="./security/admin/admin.xhtml" value="admin" rendered="#{loginBean.administrator}"/></p>
-    
-    <p><h:link outcome="./security/user/user.xhtml" value="user" rendered="#{loginBean.loggedUser}"/></p>
-	
+	<h1>Votaciones</h1>
+	<h2>Home</h2>
+	<p>
+		<h:link outcome="votar" value="Votar"></h:link>
+	</p>
+	<p>
+		<h:link outcome="votaciones" value="Ver Votaciones"></h:link>
+	</p>
 </h:body>
 </html>

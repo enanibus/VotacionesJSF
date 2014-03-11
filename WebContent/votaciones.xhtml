@@ -2,33 +2,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:u="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>Votaciones JSF</title>
+	<title>Ver Votaciones</title>
 </h:head>
 <h:body>
-	<h1>Login</h1>
-	<h:form id="form">
-        <h:message for="form" style="color:red" />
-		<h:panelGrid id="panel" columns="3">
-			<h:outputText value="Nick:" />
-			<h:inputText id="nick" value="#{loginBean.user.nick}" required="true"
-				requiredMessage="Nick es obligatorio" />
-			<h:message for="nick" style="color:red" />
+	<h1>Votaciones</h1>
+	<h2>Ver Votaciones</h2>
 
-			<h:outputText value="Password:" />
-			<h:inputSecret id="password" value="#{loginBean.password}"
-				required="true" requiredMessage="Clave es obligatoria"
-				validatorMessage="Clave mayor que 8 car.">
-				<f:validateLength minimum="8" />
-			</h:inputSecret>
-			<h:message for="password" style="color:red" />
-			
-			<h:commandButton value="Reset" type="reset" />
-			<h:commandButton value="Submit" action="#{loginBean.login}"></h:commandButton>
-			<h:outputText value=" " />
-		</h:panelGrid>
-	</h:form>
-	<p><a href="./home.jsf">Volver</a></p>
+	<p><a href="./home.jsf">Home</a></p>
 </h:body>
 </html>

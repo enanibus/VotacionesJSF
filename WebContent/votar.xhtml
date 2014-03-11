@@ -3,23 +3,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:u="http://java.sun.com/jsf/composite/utils">
+	xmlns:u="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
 <h:head>
-	<title>Votar JSF</title>
+	<title>Votar</title>
 </h:head>
 <h:body>
-	<h1>Login</h1>
+	<h1>Votaciones</h1>
+	<h2>Votar</h2>
 	<h:form id="form">
-        <h:message for="form" style="color:red" />
-	    <u:inputText id="Nick" value="#{loginBean.user.nick}" required="true"/>
-	    <u:inputSecret id="Password" value="#{loginBean.user.password}" value2="#{loginBean.password}" />
-        <u:inputText id="FirstName" value="#{loginBean.user.firstName}" required="true"/>
-        <u:inputText id="LastName" value="#{loginBean.user.lastName}" required="true"/>
-        <u:inputText id="Age" value="#{loginBean.user.age}" required="false"/>
-        <u:selectOneMenu id="Gender" value="#{loginBean.user.gender}"  values="#{loginBean.genders}"/>
-        <u:inputText id="Country" value="#{loginBean.user.country}" required="true"/>
-        <h:commandButton value="Submit" action="#{loginBean.register()}"/>
+		<h:message for="form" style="color:red" />
+		<p>Pregunta: ${votarBeanJSF.pregunta}</p>
+		<p>
+			Elige tu respuesta:
+			<h:selectOneMenu id="Respuesta" value="#{votarBeanJSF.voto.respVoto}"
+				values="#{votarBeanJSF.respuestas}">
+				<f:selectItems value="#{votarBeanJSF.respuestas}" />
+			</h:selectOneMenu>
+		</p>
+		<h:commandButton value="Votar" action="#{votarBeanJSF.votar()}" />
 	</h:form>
-	<p><a href="./home.jsf">Volver</a></p>
+
+	<p>
+		<a href="./home.jsf">Home</a>
+	</p>
 </h:body>
 </html>

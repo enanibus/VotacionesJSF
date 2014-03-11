@@ -29,13 +29,13 @@ public class Voto implements Serializable {
 	private Respuesta respVoto;
 
 	public Voto(int id, String ipCliente, Respuesta respVoto) {
+		super();
 		this.setId(id);
 		this.setIpCliente(ipCliente);
 		this.setRespVoto(respVoto);
 	}
 
 	public Voto() {
-		super();
 	}
 
 	public int getId() {
