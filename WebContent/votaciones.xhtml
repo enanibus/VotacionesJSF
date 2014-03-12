@@ -3,37 +3,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:u="http://java.sun.com/jsf/facelets">
+	xmlns:u="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Ver Votaciones</title>
+	<title>#{msgs.key3}</title>
 </h:head>
 <h:body>
-	<h1>Votaciones</h1>
-	<h2>Ver Votaciones</h2>
-	<h:dataTable border="1" var="voto"
-		value="#{votacionesBeanJSF.votaciones}">
-		<!-- 		<h:column headerText="ID.VOTO"> -->
-		<h:column>
+	<h1>#{msgs.key2}</h1>
+	<h2>#{msgs.key3}</h2>
+	<p:dataTable border="1" var="voto" value="#{votacionesBeanJSF.votaciones}" paginator="true" rows="5"  
+                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                 rowsPerPageTemplate="5,10,15">  
+		<p:column>
 			<f:facet name="header">
-				<h:outputText value="ID.VOTO"></h:outputText>
+				<h:outputText value="#{msgs.key7}"></h:outputText>
 			</f:facet>
 			<h:outputText value="#{voto.id}" />
-		</h:column>
-		<h:column>
+		</p:column>
+		<p:column>
 			<f:facet name="header">
-				<h:outputText value="IP CLIENTE"></h:outputText>
+				<h:outputText value="#{msgs.key8}"></h:outputText>
 			</f:facet>
 			<h:outputText value="#{voto.ipCliente}" />
-		</h:column>
-		<h:column>
+		</p:column>
+		<p:column>
 			<f:facet name="header">
-				<h:outputText value="RESULTADO"></h:outputText>
+				<h:outputText value="#{msgs.key9}"></h:outputText>
 			</f:facet>
 			<h:outputText value="#{voto.respVoto}" />
-		</h:column>
-	</h:dataTable>
+		</p:column>
+	</p:dataTable>
 	<p>
-		<a href="./home.jsf">Home</a>
+		<a href="./home.jsf">#{msgs.key10}</a>
 	</p>
+		<br></br><br></br>
+	<h:form>
+		<h:commandLink action="#{i18n.change('es')}" immediate="true" value="Español" />
+		|
+		<h:commandLink action="#{i18n.change('en')}" immediate="true" value="English" />
+	</h:form>
 </h:body>
 </html>

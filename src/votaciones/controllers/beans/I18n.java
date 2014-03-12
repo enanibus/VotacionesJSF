@@ -6,9 +6,11 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 @ManagedBean
+@SessionScoped
 public class I18n implements Serializable {
 	/**
 	 * 
@@ -17,8 +19,6 @@ public class I18n implements Serializable {
 	private Locale locale = FacesContext.getCurrentInstance().getViewRoot()
 			.getLocale();
 	private Date date = new Date();
-	private double number = 0.23;
-	private String name = "-parametro-";
 
 	// Getters & setters
 	public void change(String lg) {
@@ -45,22 +45,6 @@ public class I18n implements Serializable {
 
 	public void setDate(Date date) {
 		this.date = date;
-	}
-
-	public double getNumber() {
-		return number;
-	}
-
-	public void setNumber(double number) {
-		this.number = number;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 }

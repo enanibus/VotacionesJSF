@@ -4,18 +4,30 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<title>Votaciones</title>
+	<title>#{msgs.key2}</title>
 	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
 	<meta http-equiv="Expires" content="-1" />
 </h:head>
 <h:body>
-	<h1>Votaciones</h1>
-	<h2>Home</h2>
+	<h1>#{msgs.key2}</h1>
+	<h2>#{msgs.key10}</h2>
 	<p>
-		<h:link outcome="votar" value="Votar"></h:link>
+		<h:link outcome="votar" value="#{msgs.key1}"></h:link>
 	</p>
 	<p>
-		<h:link outcome="votaciones" value="Ver Votaciones"></h:link>
+		<h:link outcome="votaciones" value="#{msgs.key3}"></h:link>
 	</p>
+	<p>
+		<h:outputText value="#{i18n.date}">
+			<f:convertDateTime dateStyle="full" />
+		</h:outputText>
+	</p>
+	<br></br><br></br>
+	<h:form>
+		<h:commandLink action="#{i18n.change('es')}" immediate="true" value="Español" />
+		|
+		<h:commandLink action="#{i18n.change('en')}" immediate="true" value="English" />
+	</h:form>
+
 </h:body>
 </html>
